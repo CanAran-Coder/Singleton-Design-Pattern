@@ -1,6 +1,6 @@
 # Singleton Design Pattern
 
-**Singleton design pattern's purpose is create the object only a time and do not allow to make copy of it.**
+**The purpose of Singleton Design Pattern is prevent creating multiple instance from the class.**
 
 ## Example
 
@@ -27,9 +27,9 @@ public  class Languages {
 }
 
 ```
-**In this code block, we defined a class which's name "Languages" and static Instance property.**
-**We blocked constructure because we don't want to create a lot of copy of that class.**
-**synchronized keyword fixes the problem "what if 2 request came at the same time?" problem.**
+**In this code block, we defined a class named "Languages" with a static Instance property.**
+**We made constructure private becuase we want to prevent creating multiple instances of this class.**
+**synchronized keyword handles "what if 2 request come at the same time?" problem.(thread safety)**
 
 ```java
 
@@ -50,8 +50,10 @@ public class Main {
 }
 
 ```
-**When we check the location in the ram of the instance, we will get result like that**
+**When we check the memory adresses of the instances, we will get the following results**
 **org.test.Languages@8efb846**
 **org.test.Languages@8efb846**
 **org.test.Languages@8efb846**
 **org.test.Languages@8efb846**
+
+**All adresses are identical, it proves that only one object exists in memory.**
